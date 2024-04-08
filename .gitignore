@@ -43,5 +43,5 @@ app.*.map.json
 # Android Studio will place build artifacts here
 STT/android/app/debug
 STT/android/app/profile
-STT//android/app/release
-STT//assets/test_service_account.json
+STT/android/app/release
+STT/assets/test_service_account.json

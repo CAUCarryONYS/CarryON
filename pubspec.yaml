@@ -29,8 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  google_speech:
-    path: ../../
+  google_speech: ^5.2.0+1
   path_provider: ^2.1.1
 
 dev_dependencies:

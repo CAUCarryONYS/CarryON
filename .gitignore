@@ -44,4 +44,3 @@ app.*.map.json
 STT/android/app/debug
 STT/android/app/profile
 STT/android/app/release
-STT/assets/test_service_account.json

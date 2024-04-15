@@ -1,0 +1,30 @@
+# 서버 포트 설정
+server:
+  port: 8085
+
+# database 연동 설정
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # url: jdbc:mysql://testplease.c1jynxpeakt1.ap-northeast-2.rds.amazonaws.com:3306/test?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/carry_test?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: rot
+    password: 1q2w3e4r
+  thymeleaf:
+    cache: false
+  autoconfigure:
+    exclude=org:
+      springframework:
+        boot:
+          autoconfigure:
+            security:
+              servlet:
+                SecurityAutoConfiguration:
+
+  # spring data jpa 설정
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update

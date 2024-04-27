@@ -1,10 +1,29 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.audio_file_example_v2.app-mergeDebugResources-9:/values-v16/values-v16.xml",
+            "outputFile": "com.example.audio_file_example_v2.app-mergeDebugResources-23:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\yunsu\\.gradle\\caches\\transforms-3\\2579a7de00054bf46a8dbc332552f622\\transformed\\core-1.6.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\hjun8\\.gradle\\caches\\transforms-3\\97e3226af2fd609ef4d52776d700dea7\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\hjun8\\.gradle\\caches\\transforms-3\\18b625d35062a35e12b117edc13b7cf9\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

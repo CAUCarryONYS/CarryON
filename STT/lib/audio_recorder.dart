@@ -131,19 +131,27 @@ class _RecorderState extends State<Recorder> with AudioRecorderMixin {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                _buildRecordStopControl(),
-                const SizedBox(width: 20),
-                _buildPauseResumeControl(),
-                const SizedBox(width: 20),
-                _buildText(),
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    _buildRecordStopControl(),
+                    const SizedBox(width: 20),
+                    // _buildPauseResumeControl(),
+                    const SizedBox(
+                      width: 20,
+                      height: 50,
+                    ),
+                    _buildText(),
+                  ],
+                ),
               ],
             ),
-            if (_amplitude != null) ...[
+            /*if (_amplitude != null) ...[
               const SizedBox(height: 40),
               Text('Current: ${_amplitude?.current ?? 0.0}'),
               Text('Max: ${_amplitude?.max ?? 0.0}'),
-            ],
+            ],*/
           ],
         ),
       ),
@@ -164,11 +172,11 @@ class _RecorderState extends State<Recorder> with AudioRecorderMixin {
     late Color color;
 
     if (_recordState != RecordState.stop) {
-      icon = const Icon(Icons.stop, color: Colors.red, size: 30);
+      icon = const Icon(Icons.stop, color: Colors.red, size: 100);
       color = Colors.red.withOpacity(0.1);
     } else {
       final theme = Theme.of(context);
-      icon = Icon(Icons.mic, color: theme.primaryColor, size: 30);
+      icon = Icon(Icons.mic, color: theme.primaryColor, size: 100);
       color = theme.primaryColor.withOpacity(0.1);
     }
 
@@ -176,7 +184,7 @@ class _RecorderState extends State<Recorder> with AudioRecorderMixin {
       child: Material(
         color: color,
         child: InkWell(
-          child: SizedBox(width: 56, height: 56, child: icon),
+          child: SizedBox(width: 300, height: 300, child: icon),
           onTap: () {
             (_recordState != RecordState.stop) ? _stop() : _start();
           },
@@ -220,7 +228,7 @@ class _RecorderState extends State<Recorder> with AudioRecorderMixin {
       return _buildTimer();
     }
 
-    return const Text("Waiting to record");
+    return const Text("Recordeing");
   }
 
   Widget _buildTimer() {

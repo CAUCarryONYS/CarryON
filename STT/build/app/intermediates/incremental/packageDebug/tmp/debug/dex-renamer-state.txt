@@ -1,4 +1,16 @@
-#Wed Apr 10 17:19:47 KST 2024
-base.0=G\:\\CAU24_1\\capstone\\CarryON\\STT\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Sat Apr 27 19:54:31 KST 2024
+base.0=C\:\\Users\\hjun8\\MyApp\\CarryON\\STT\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\hjun8\\MyApp\\CarryON\\STT\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\hjun8\\MyApp\\CarryON\\STT\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.3=C\:\\Users\\hjun8\\MyApp\\CarryON\\STT\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+base.4=C\:\\Users\\hjun8\\MyApp\\CarryON\\STT\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
 path.0=classes.dex
+path.1=0/classes.dex
+path.2=0/classes.dex
+path.3=14/classes.dex
+path.4=1/classes.dex
 renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex
+renamed.3=classes4.dex
+renamed.4=classes5.dex

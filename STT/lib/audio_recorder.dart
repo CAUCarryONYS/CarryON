@@ -1,10 +1,13 @@
 import 'dart:async';
+import './upload_audio.dart';
+//import './stt.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:record/record.dart';
 
 import 'platform/audio_recorder_platform.dart';
+import 'stt.dart';
 
 class Recorder extends StatefulWidget {
   final void Function(String path) onStop;
@@ -16,6 +19,8 @@ class Recorder extends StatefulWidget {
 }
 
 class _RecorderState extends State<Recorder> with AudioRecorderMixin {
+  STT stt = STT();
+  String text = "test";
   int _recordDuration = 0;
   Timer? _timer;
   late final AudioRecorder _audioRecorder;
@@ -77,9 +82,14 @@ class _RecorderState extends State<Recorder> with AudioRecorderMixin {
 
     if (path != null) {
       widget.onStop(path);
+      await AudioUploader.uploadAudio(path);
 
       downloadWebData(path);
     }
+    stt.setFilename(path.toString());
+    text = await stt.recognize();
+    setState(() {});
+    /* 파일 업로드 */
   }
 
   Future<void> _pause() => _audioRecorder.pause();
@@ -143,6 +153,7 @@ class _RecorderState extends State<Recorder> with AudioRecorderMixin {
                       height: 50,
                     ),
                     _buildText(),
+                    Text(text),
                   ],
                 ),
               ],
@@ -228,7 +239,7 @@ class _RecorderState extends State<Recorder> with AudioRecorderMixin {
       return _buildTimer();
     }
 
-    return const Text("Recordeing");
+    return const Text("Recording");
   }
 
   Widget _buildTimer() {

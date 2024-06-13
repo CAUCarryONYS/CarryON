@@ -29,10 +29,10 @@
 .packages
 .pub-cache/
 .pub/
-/STT/build/
+carrion/build/
 
 # Web related
-STT/lib/generated_plugin_registrant.dart
+carrion/lib/generated_plugin_registrant.dart
 
 # Symbolication related
 app.*.symbols
@@ -41,6 +41,6 @@ app.*.symbols
 app.*.map.json
 
 # Android Studio will place build artifacts here
-STT/android/app/debug
-STT/android/app/profile
-STT/android/app/release
+carrion/android/app/debug
+carrion/android/app/profile
+carrion/android/app/release

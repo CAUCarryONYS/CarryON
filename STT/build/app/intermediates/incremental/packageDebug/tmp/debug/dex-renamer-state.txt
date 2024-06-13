@@ -1,4 +1,0 @@
-#Tue Apr 09 00:03:36 KST 2024
-base.0=G\:\\CAU24_1\\capstone\\CarryON\\STT\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex

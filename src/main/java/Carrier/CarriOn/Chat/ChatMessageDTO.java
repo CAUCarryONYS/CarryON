@@ -1,7 +1,12 @@
 package Carrier.CarriOn.Chat;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
+@Getter
+@Setter
 public class ChatMessageDTO {
     private Long id;
     private Long chatRoomId;
@@ -11,9 +16,8 @@ public class ChatMessageDTO {
     private String timestamp;
     private String profileImage;
     private List<String> participantNames;
-    private String chatRoomName; // chatRoomName 추가
+    private String chatRoomName;
 
-    // Constructor
     public ChatMessageDTO(Long id, Long chatRoomId, String chatRoomName, Long senderId, String senderName, String message, String timestamp, String profileImage, List<String> participantNames) {
         this.id = id;
         this.chatRoomId = chatRoomId;

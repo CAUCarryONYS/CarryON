@@ -45,7 +45,6 @@ public class UserEntity {
     public UserEntity() {
     }
 
-    // 매개변수가 있는 생성자
     public UserEntity(String loginId, String password, String name, byte[] profileImage) {
         this.loginId = loginId;
         this.password = password;

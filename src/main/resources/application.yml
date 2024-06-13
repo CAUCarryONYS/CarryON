@@ -8,6 +8,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://copytixe.iptime.org:3306/mydatabase
     #url: jdbc:mysql://localhost:3306/carry_test?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    #url: jdbc:mysql://testplease.c1jynxpeakt1.ap-northeast-2.rds.amazonaws.com:3306/test?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: myuser
     #username: rot
     password: 112358

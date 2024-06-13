@@ -2,10 +2,14 @@ package Carrier.CarriOn.Chat;
 
 import Carrier.CarriOn.User.UserEntity;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
+@Setter
 @Entity
 public class ChatRoom {
 
@@ -23,7 +27,6 @@ public class ChatRoom {
     )
     private Set<UserEntity> participants;
 
-    // Getters and setters
     public Long getId() {
         return id;
     }

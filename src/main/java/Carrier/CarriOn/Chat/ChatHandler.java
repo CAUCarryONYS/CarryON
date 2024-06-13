@@ -51,12 +51,10 @@ public class ChatHandler extends TextWebSocketHandler {
         Long chatRoomId = chatMessageRequest.getChatRoomId();
         String messageText = chatMessageRequest.getMessage();
 
-        // Null 체크 및 디버깅 로그 추가
         if (senderId == null || chatRoomId == null) {
             throw new IllegalArgumentException("Sender ID and Chat Room ID must not be null");
         }
 
-        // 디버깅을 위한 로그 추가
         System.out.println("Sender ID: " + senderId);
         System.out.println("Chat Room ID: " + chatRoomId);
 
@@ -79,7 +77,7 @@ public class ChatHandler extends TextWebSocketHandler {
                 if (memberSession != null && memberSession.isOpen()) {
                     ChatMessageDTO chatMessageDTO = new ChatMessageDTO(
                             chatMessage.getId(),
-                            chatRoomId, // chatRoomId 추가
+                            chatRoomId,
                             chatRoom.getName(),
                             chatMessage.getSenderId(),
                             chatService.getUserNameById(chatMessage.getSenderId()),

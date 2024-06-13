@@ -1,22 +1,24 @@
 package Carrier.CarriOn.Chat;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Set;
 
+@Getter
+@Setter
 public class CreateChatRoomRequest {
     private String name;
     private Set<Long> memberIds;
 
-    // 기본 생성자
     public CreateChatRoomRequest() {
     }
 
-    // 매개변수가 있는 생성자
     public CreateChatRoomRequest(String name, Set<Long> memberIds) {
         this.name = name;
         this.memberIds = memberIds;
     }
 
-    // Getter와 Setter
     public String getName() {
         return name;
     }

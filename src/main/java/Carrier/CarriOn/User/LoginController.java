@@ -50,8 +50,6 @@ public class LoginController {
         userInfo.put("id", existingUser.getId().toString());
         userInfo.put("loginId", existingUser.getLoginId());
         userInfo.put("name", existingUser.getName());
-
-        // 프로필 이미지 추가
         String profileImage = chatService.getProfileImageBase64(existingUser);
         userInfo.put("profileImage", profileImage);
 

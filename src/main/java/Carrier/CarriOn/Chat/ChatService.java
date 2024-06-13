@@ -63,7 +63,7 @@ public class ChatService {
         return chatRoom;
     }
 
-    // 채팅방목록에 반환할 해당 채팅방 최근 메시지 탐색 및 최신 메시지 순으로 정렬
+    // 채팅방목록에 반환할 해당채팅방 최근메시지 검색 및 최신메시지순으로 정렬
     public List<ChatRoomWithLatestMessageDTO> getChatRoomsWithLatestMessages(Long userId) {
         List<ChatRoom> chatRooms = chatRoomRepository.findByUserId(userId);
 
@@ -144,7 +144,6 @@ public class ChatService {
 
         // 캐시에 저장
         chatMessageCache.put(chatRoomId, messageDTOs);
-
         return messageDTOs;
     }
 
@@ -183,19 +182,15 @@ public class ChatService {
             ));
             chatMessageCache.put(chatRoomId, messageDTOs);
         }
-
         // 채팅방 캐시 업데이트
         updateChatRoomCache(chatRoomId);
     }
-
-
-    // ChatService.java
 
     public void invalidateChatRoomCache(Long userId) {
         List<ChatRoom> chatRooms = chatRoomRepository.findByUserId(userId);
         for (ChatRoom chatRoom : chatRooms) {
             chatRoomCache.remove(chatRoom.getId());
-            // 채팅방 캐시를 갱신
+            // 채팅방 캐시 갱신 해줘
             updateChatRoomCache(chatRoom.getId());
         }
     }
@@ -242,15 +237,11 @@ public class ChatService {
 
 
     public String getUserNameById(Long userId) {
-        // 캐시에서 사용자 이름 확인
         if (userNameCache.containsKey(userId)) {
             return userNameCache.get(userId);
         }
-
-        // 데이터베이스에서 사용자 이름 조회
         String userName = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found")).getName();
 
-        // 캐시에 저장
         userNameCache.put(userId, userName);
 
         return userName;
@@ -274,27 +265,20 @@ public class ChatService {
         return null;
     }
 
+    // 사진 가져오기
     public String getProfileImageBase64(UserEntity user) {
         Long userId = user.getId();
 
-        // 캐시에서 프로필 이미지 Base64 확인
         if (profileImageCache.containsKey(userId)) {
             return profileImageCache.get(userId);
         }
 
-        // 프로필 이미지가 없는 경우 기본 이미지 사용
         byte[] profileImageBytes = user.getProfileImage();
         if (profileImageBytes == null) {
-            // 기본 이미지 설정 (여기서는 비어있는 문자열로 설정)
             profileImageBytes = new byte[0];
         }
-
-        // Base64로 인코딩
         String profileImageBase64 = Base64.getEncoder().encodeToString(profileImageBytes);
-
-        // 캐시에 저장
         profileImageCache.put(userId, profileImageBase64);
-
         return profileImageBase64;
     }
 }

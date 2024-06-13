@@ -1,22 +1,24 @@
 package Carrier.CarriOn.Chat;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class ChatMessageRequest {
     private Long senderId;
     private Long chatRoomId;
     private String message;
 
-    // 기본 생성자
     public ChatMessageRequest() {
     }
 
-    // 매개변수가 있는 생성자
     public ChatMessageRequest(Long senderId, Long chatRoomId, String message) {
         this.senderId = senderId;
         this.chatRoomId = chatRoomId;
         this.message = message;
     }
 
-    // Getter와 Setter
     public Long getSenderId() {
         return senderId;
     }

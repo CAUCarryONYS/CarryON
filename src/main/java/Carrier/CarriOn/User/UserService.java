@@ -52,7 +52,7 @@ public class UserService {
         // 친구 추가 후 채팅방 생성
         chatService.createChatRoomIfNotExists(userId, friend.getId());
 
-        // 친구 추가 시 캐시 무효화
+        // 친구 추가 시 캐시 무효
         invalidateFriendListCache(userId);
         invalidateFriendListCache(friend.getId());
     }
@@ -73,13 +73,12 @@ public class UserService {
         userRepository.save(user);
         userRepository.save(friend);
 
-        // 친구 삭제 시 캐시 무효화
+        // 친구 삭제 시 캐시 무효
         invalidateFriendListCache(userId);
         invalidateFriendListCache(friendId);
     }
 
     public List<FriendDTO> getFriendListWithIds(Long userId) {
-        // 캐시에서 친구 목록 확인
         if (friendListCache.containsKey(userId) && !isCacheExpired(userId)) {
             return friendListCache.get(userId);
         }
@@ -96,10 +95,9 @@ public class UserService {
             friends.add(new FriendDTO(friend.getId(), friend.getName(), chatRoomId, profileImageBase64));
         }
 
-        // 이름 오름차순으로 정렬
+        // 이름 오름차순
         friends.sort(Comparator.comparing(FriendDTO::getName));
 
-        // 캐시에 저장
         friendListCache.put(userId, friends);
         friendListCacheTime.put(userId, System.currentTimeMillis());
 
@@ -131,8 +129,9 @@ public class UserService {
 
         if (isUpdated) {
             userRepository.save(user);
-            // 유저가 참여한 채팅방의 캐시 무효화 또는 갱신
+            // 캐시 갱신해줘
             invalidateChatRoomCache(userId);
+            invalidateFriendListCache(userId);
         }
     }
 
@@ -157,24 +156,17 @@ public class UserService {
     public String getProfileImageBase64(UserEntity user) {
         Long userId = user.getId();
 
-        // 캐시에서 프로필 이미지 Base64 확인
         if (profileImageCache.containsKey(userId)) {
             return profileImageCache.get(userId);
         }
 
-        // 프로필 이미지가 없는 경우 기본 이미지 사용
         byte[] profileImageBytes = user.getProfileImage();
         if (profileImageBytes == null) {
-            // 기본 이미지 설정 (여기서는 비어있는 문자열로 설정)
             profileImageBytes = new byte[0];
         }
 
-        // Base64로 인코딩
         String profileImageBase64 = Base64.getEncoder().encodeToString(profileImageBytes);
-
-        // 캐시에 저장
         profileImageCache.put(userId, profileImageBase64);
-
         return profileImageBase64;
     }
 }

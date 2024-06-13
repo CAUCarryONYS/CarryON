@@ -10,8 +10,8 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/registration")
-@CrossOrigin(origins = "http://localhost:8085")
-//@CrossOrigin(origins = "http://copytixe.iptime.org:8085")
+//@CrossOrigin(origins = "http://localhost:8085")
+@CrossOrigin(origins = "http://copytixe.iptime.org:8085")
 public class RegistrationController {
 
     private final UserRepository userRepository;
@@ -26,7 +26,7 @@ public class RegistrationController {
     public ResponseEntity<Map<String, String>> registerUser(@RequestBody UserEntity newUser) {
         Map<String, String> response = new HashMap<>();
 
-        // loginId 중복 검사
+        // 아이디 중복 검사
         if (userRepository.findByLoginId(newUser.getLoginId()).isPresent()) {
             response.put("isSuccess", "중복된 loginId");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);

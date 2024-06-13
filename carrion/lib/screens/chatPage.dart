@@ -13,7 +13,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../models/chatUserModel.dart';
 import '../models/chatroomModel.dart';
-import 'makeChatroomPage.dart';
 
 class ChatPage extends StatefulWidget {
   ChatPage({
@@ -125,11 +124,7 @@ class _ChatPageState extends State<ChatPage> with ChatState {
                     ),
                     child: InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context){
-                          return MakeChatroomPage(
-                            serverConnect: widget.serverConnect,
-                          );
-                        }));
+                        
                       },
                       child: const Row(
                       children: <Widget>[

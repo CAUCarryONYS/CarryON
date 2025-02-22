@@ -32,7 +32,8 @@ CarryOn is a driver-focused messaging application designed to enable safe and se
 CarryOn is designed to offer drivers a reliable and safe way to stay connected while on the road, combining real-time messaging technology with thoughtful user experience enhancements to prioritize safety and usability.
 
 ## Using While Driving
-[![Video Label](http://img.youtube.com/vi/o5FRoohBnuY/0.jpg)]
+![Video Label](http://img.youtube.com/vi/o5FRoohBnuY/0.jpg)
+
 (https://www.youtube.com/watch?v=o5FRoohBnuY)
 
 ## Manual

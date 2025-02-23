@@ -37,11 +37,9 @@ CarryOn is designed to offer drivers a reliable and safe way to stay connected w
 (https://www.youtube.com/watch?v=o5FRoohBnuY)
 
 ## Manual
-![Image](https://github.com/user-attachments/assets/3dd7ae11-865c-4135-94a4-4574f9ec5b37)
-![Image](https://github.com/user-attachments/assets/c03fe337-1815-4e73-ae2b-a1a8ed39b951)
-![Image](https://github.com/user-attachments/assets/81b202df-7ecc-4455-add2-0ee40189ef04)
-![Image](https://github.com/user-attachments/assets/7a8c98b9-427d-4fcd-93cb-d41b9674a69c)
-![Image](https://github.com/user-attachments/assets/f2e3337a-ee02-42a9-9ee2-30dcae015f7e)
-![Image](https://github.com/user-attachments/assets/22607da9-cba4-478d-8b18-4e6205c77944)
-![Image](https://github.com/user-attachments/assets/2c3c97bb-eacb-4d17-a2c1-0dcb5dd5d8fe)
-
+![Image](https://github.com/user-attachments/assets/12fe127f-2fc5-4a67-8ccb-8f0bd778c539)
+![Image](https://github.com/user-attachments/assets/dfe7eae0-c4ed-4d86-a9c4-19d82b3a02af)
+![Image](https://github.com/user-attachments/assets/64a9f574-8901-4f9d-a93b-0b89b8b0db65)
+![Image](https://github.com/user-attachments/assets/f6d084e8-d58a-43d6-8934-9c4c4f5145a3)
+![Image](https://github.com/user-attachments/assets/e10b628a-1713-4d05-99b3-c18c811eb140)
+![Image](https://github.com/user-attachments/assets/2294101d-150c-42f7-9f68-277fc0fcf665)
